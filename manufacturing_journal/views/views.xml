@@ -1,12 +1,12 @@
 <odoo>
   <data>
       <record id="res_config_settings_view_manfacturing_form" model="ir.ui.view">
-            <field name="name">res.config.settings.view.form.inherit.account.manfacturing</field>
+            <field name="name">res.config.settings.view.form.inherit.mrp</field>
             <field name="model">res.config.settings</field>
             <field name="priority" eval="40"/>
-            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="inherit_id" ref="mrp.res_config_settings_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('settings')]" position="inside">
+                <xpath expr="//div[@data-key='mrp']" position="inside">
                     <h2>Operation Expenses : Manfacturing</h2>
                     <div class="row mt16 o_settings_container">
                       <div class="col-12 col-lg-6 o_setting_box" title="This Account is set to use it as operation expense account, while creating manfacturing journal">
@@ -28,40 +28,7 @@
                         </div>
                       </div>
                     </div>
-                </xpath>
-          </field>
-      </record>
-  </data>
-</odoo><odoo>
-  <data>
-      <record id="res_config_settings_view_manfacturing_form" model="ir.ui.view">
-            <field name="name">res.config.settings.view.form.inherit.account.manfacturing</field>
-            <field name="model">res.config.settings</field>
-            <field name="priority" eval="40"/>
-            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//div[hasclass('settings')]" position="inside">
-                    <h2>Operation Expenses : Manfacturing</h2>
-                    <div class="row mt16 o_settings_container">
-                      <div class="col-12 col-lg-6 o_setting_box" title="This Account is set to use it as operation expense account, while creating manfacturing journal">
 
-                        <div class="o_setting_left_pane">
-                                <field name="_accounting_expenses"/>
-                        </div>
-                        <div class="o_setting_right_pane">
-                            <label for="_accounting_expenses"/>
-                            <div class="text-muted">
-                                 Allow to create journal for operation Expense Account
-                            </div>
-                            <div class="content-group" attrs="{'invisible': [('_accounting_expenses', '=', False)]}">
-                                <div class="row mt16">
-                                    <label for="accounts_to_select" class="col-lg-3 o_light_label"/>
-                                    <field name="accounts_to_select"/>
-                                </div>
-                             </div>
-                        </div>
-                      </div>
-                    </div>
                 </xpath>
           </field>
       </record>
