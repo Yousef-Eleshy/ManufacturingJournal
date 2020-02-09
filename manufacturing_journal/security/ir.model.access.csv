@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_manufacturing_journal_manufacturing_journal,manufacturing_journal.manufacturing_journal,model_manufacturing_journal_manufacturing_journal,base.group_user,1,1,1,1
