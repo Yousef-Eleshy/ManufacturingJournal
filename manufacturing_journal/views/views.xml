@@ -12,17 +12,17 @@
                       <div class="col-12 col-lg-6 o_setting_box" title="Select an account to use as an Operation Expense account">
 
                         <div class="o_setting_left_pane">
-                                <field name="_accounting_expenses"/>
+                                <field name="operation_expenses"/>
                         </div>
                         <div class="o_setting_right_pane">
-                            <label for="_accounting_expenses"/>
+                            <label for="operation_expenses"/>
                             <div class="text-muted">
                                  Enable Journal creation for Operation Expense Account
                             </div>
-                            <div class="content-group" attrs="{'invisible': [('_accounting_expenses', '=', False)]}">
+                            <div class="content-group" attrs="{'invisible': [('operation_expenses', '=', False)]}">
                                 <div class="row mt16">
-                                    <label for="accounts_to_select" class="col-lg-3 o_light_label"/>
-                                    <field name="accounts_to_select"/>
+                                    <label for="account_selection" class="col-lg-3 o_light_label"/>
+                                    <field name="account_selection"/>
                                 </div>
                              </div>
                         </div>
