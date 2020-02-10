@@ -24,4 +24,52 @@ class manufacturing_journal(models.TransientModel):
         operation_expenses = params.get_param('operation_expenses', default=False)
         res.update(operation_expenses=operation_expenses)
         return res
+
+
+############# ATTEMPT 1 #############
+
+    # Save Account Selection
+#    @api.onchange('account_selection')
+#    def save_account_selection(self):
+#        if self.account_selection:
+#            self.company_id.account_selection = self.account_selection
     
+
+    
+    
+############# ATTEMPT 2 #############
+    
+#    def set_values(self):
+#        res = super(manufacturing_journal, self).set_values()
+#        self.env['ir.config_parameter'].set_param('manufacturing_journal.account_selection', self.account_selection)
+#        return res
+    
+#    @api.model
+#    def get_values(self):
+#        res = super(manufacturing_journal, self).get_values()
+#        ICPSudo = self.env['ir.config_parameter'].sudo()
+#        selection = ICPSudo.get_param('manufacturing_journal.account_selection')
+#        res.update(account_selection=selection)
+#        return res
+
+
+
+
+############# ATTEMPT 3 #############
+        
+#@api.model
+#    def get_values(self):
+#        res = super(manufacturing_journal, self).get_values()
+#        res.update(
+#            account_selection = self.env['ir.config_parameter'].sudo().get_param('manufacturing_journal.account_selection')
+#        )
+#        return res
+
+    
+#    def set_values(self):
+#        super(manufacturing_journal, self).set_values()
+#        param = self.env['ir.config_parameter'].sudo()
+
+#        field1 = self.account_selection and self.account_selection.id or False
+
+#        param.set_param('manufacturing_journal.account_selection', field1)
