@@ -29,10 +29,10 @@ class manufacturing_journal(models.TransientModel):
 ############# ATTEMPT 1 #############
 
     # Save Account Selection
-#    @api.onchange('account_selection')
-#    def save_account_selection(self):
-#        if self.account_selection:
-#            self.company_id.account_selection = self.account_selection
+    @api.onchange('account_selection')
+    def save_account_selection(self):
+        if self.account_selection:
+            self.company_id.account_selection = self.account_selection
     
 
     
@@ -73,3 +73,19 @@ class manufacturing_journal(models.TransientModel):
 #        field1 = self.account_selection and self.account_selection.id or False
 
 #        param.set_param('manufacturing_journal.account_selection', field1)
+
+
+class ResCompany(models.Model):
+    _inherit = "res.company"
+    
+     # Dropdown - Select Account
+    account_selection = fields.Many2one('account.account', string='Operation Expenses Account')
+    
+    # Save Account Selection
+    @api.onchange('account_selection')
+    def save_account_selection(self):
+        if self.account_selection:
+            self.company_id.account_selection = self.account_selection
+            
+    
+    
